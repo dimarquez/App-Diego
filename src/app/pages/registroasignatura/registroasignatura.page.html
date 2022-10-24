@@ -1,0 +1,41 @@
+
+<ion-content>
+  <form [formGroup]="asignatura" (ngSubmit)="registrarAsignatura()">
+    <ion-card>
+      <ion-item>
+        <ion-label position="stacked">Nombre</ion-label>
+        <ion-input formControlName="nombre" id="nombre" type="text" placeholder="Ingrese nombre asignatura"></ion-input>
+      </ion-item>
+      <ion-button expand="full" type="submit" [disabled]="!asignatura.valid">REGISTRAR</ion-button>
+    </ion-card>
+  </form>
+<h1>Lista de Asignaturas</h1>
+<div *ngIf="asignaturas.length != 0; else elseBlock">
+  <ion-list *ngFor="let a of asignaturas">
+    <ion-card>
+      <ion-item>
+        <ion-card-header>
+          <ion-card-tittle>{{a.nombre}}</ion-card-tittle>
+        </ion-card-header>
+      </ion-item>
+    </ion-card>
+
+  </ion-list>
+
+</div>
+<ng-template #elseBlock>
+  <p>No existen asignaturas</p>
+</ng-template>
+</ion-content>
+<ion-content>
+  <h1>Registro de datos con Storage</h1>
+  <ion-item>
+    <ion-label position="floating">Rut </ion-label>
+    <ion-input type="text" placeholder="Ej: 20704119-K"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Rut </ion-label>
+    <ion-input type="text" placeholder="Ej: 20704119-K"></ion-input>
+  </ion-item>
+</ion-content>
